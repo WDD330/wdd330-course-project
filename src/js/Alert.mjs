@@ -1,7 +1,7 @@
 export default class Alert {
 
-    constructor(jsonFile) {
-        this.jsonFile = jsonFile;
+      constructor(file) {
+        this.jsonFile = `../json/${file}.json`;
       }
     
       async fetchAlerts() {
@@ -10,7 +10,7 @@ export default class Alert {
           const alerts = await response.json();
           return alerts;
         } catch (error) {
-          console.error("Error fetching alerts:", error);
+         // console.error("Error fetching alerts:", error);
           return [];
         }
       }
@@ -40,5 +40,5 @@ export default class Alert {
           mainElement.prepend(alertSection);
         }
       }
-      
+
 }
